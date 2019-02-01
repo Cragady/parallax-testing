@@ -1,3 +1,5 @@
+/* all pages */
+
 a{
     color: black;
 }
@@ -7,9 +9,10 @@ a:hover{
 }
 
 .active{
-    background: grey;
-    color: white;
+    background: rgb(214, 214, 214);
 }
+
+/* index.html/Scroll */
 
 /* According to the example givin on
     https://www.w3schools.com/howto/howto_css_parallax.asp */
@@ -32,3 +35,32 @@ a:hover{
         background-attachment: scroll;
     }
 }
+
+/* ----------------------------- */
+
+/* reverse-s.html ---------*/
+
+/* According to the example given on 
+    https://www.taniarascia.com/parallax-scroll-effect/ */
+
+    /* reference the section under reverse-s in scripts.js */
+
+.parallax-container-rs{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.parallax-rs{
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    z-index: -1;
+    background: url('http://www.goodmorningimagesforlover.com/wp-content/uploads/2018/10/dark-side-cool-background-1066x617.jpg') center center / cover no-repeat;
+}
+
+.content-rs{
+    background: #fff;
+}
+
+/* --------------------------- */

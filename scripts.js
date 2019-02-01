@@ -1,8 +1,10 @@
-const navArray = ['index.html', 'new.html', '#', '#'];
+const navArray = ['index.html', 'reverse-s.html','new.html', ];
 const pather = window.location.pathname.split('/');
 const pathPlacer = pather[pather.length - 1];
 const newPlacer = pather[pather.length - 2] + '/' + pathPlacer;
 const newNavs = [];
+const picSection = [];
+let funkSwitch;
 
 function navWriter(p1, p2){
     let href;
@@ -25,6 +27,24 @@ function navWriter(p1, p2){
     })
 };
 
+function parallaxSwitch(){
+    switch (pathPlacer){
+        case 'index.html':
+            console.log('hardcoded');
+            break;
+        case 'reverse-s.html':
+            picSection.push(`
+                <section class="parallax-container-rs">
+                    <div class="parallax-rs"></div>
+                </section>
+            `);
+            funkSwitch = parallaxRSScroller;
+            break;
+        default:
+            console.log('oops');
+    }
+}
+
 function bodyWriter(){
     let precursor1 = './';
     let precursor2 = './others/';
@@ -43,9 +63,7 @@ function bodyWriter(){
         <div class="jumbotron">Hello, World!</div>
     </header>
 
-    <section>
-        <div class="parallax-fs"></div>
-    </section>
+    ${picSection.join('')}
 
     <section>
         <div class="lorem">
@@ -158,27 +176,37 @@ function bodyWriter(){
         </div>
     </section>       
         `);
+        funkSwitch();
     };
 };
 
 function navs(){
-    // switch(pathPlacer){
-    //     case "index.html":
-    //         console.log($(`a[href='./${pathPlacer}']`))
-    //         console.log(`hello, ${pathPlacer}!`);
-    //         break;
-    //     case "new.html":
-    //         console.log($(`a[href='./${pathPlacer}']`));
-    //         console.log(pathPlacer)
-    //         break;
-    //     default:
-    //         console.log("boroqueaean");
-    // };
-    console.log(pathPlacer);
     $(`a[href='./${pathPlacer}']`).addClass('active');
 };
 
+// reverse-s -----------------
+
+function parallaxRSScroller(){
+    const parallaxElementsRS = $('.parallax-rs'),
+        parallaxQuantityRS = parallaxElementsRS.length;
+
+    $(window).on('scroll', function(){
+        window.requestAnimationFrame(function(){
+            for(let i = 0; i < parallaxQuantityRS; i++){
+                const currentElementRS = parallaxElementsRS.eq(i);
+                const scrolledRS = $(window).scrollTop();
+                currentElementRS.css({
+                    'transform': `translate3d(0, ${scrolledRS * -0.3}px, 0)`
+                });
+            };
+        });
+    });
+};
+
+// end reverse-s ----------------
+
 $(document).ready(function(){
+    parallaxSwitch();
     bodyWriter();
     navs();
 });
