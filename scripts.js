@@ -1,10 +1,12 @@
-const navArray = ['index.html', 'reverse-s.html','new.html', ];
+const navArray = ['index.html', 'reverse-s.html', 'scroll-with.html', 'new.html'];
 const pather = window.location.pathname.split('/');
 const pathPlacer = pather[pather.length - 1];
 const newPlacer = pather[pather.length - 2] + '/' + pathPlacer;
 const newNavs = [];
 const picSection = [];
+let scrollNum;
 let funkSwitch;
+let scrollDir;
 
 function navWriter(p1, p2){
     let href;
@@ -38,8 +40,18 @@ function parallaxSwitch(){
                     <div class="parallax-rs"></div>
                 </section>
             `);
+            scrollNum = -0.6;
             funkSwitch = parallaxRSScroller;
             break;
+        case 'scroll-with.html':
+            picSection.push(`
+                <section class="parallax-container-rs">
+                    <div class="parallax-rs"></div>
+                </section>
+            `);
+            scrollDir = 'with';
+            scrollNum = 0.6;
+            funkSwitch = parallaxRSScroller;
         default:
             console.log('oops');
     }
@@ -176,7 +188,7 @@ function bodyWriter(){
         </div>
     </section>       
         `);
-        funkSwitch();
+        funkSwitch(scrollDir);
     };
 };
 
@@ -186,17 +198,19 @@ function navs(){
 
 // reverse-s -----------------
 
-function parallaxRSScroller(){
+function parallaxRSScroller(direction){
     const parallaxElementsRS = $('.parallax-rs'),
         parallaxQuantityRS = parallaxElementsRS.length;
-
+    if(direction === 'with'){
+        $('.parallax-rs').css({'top': -100 + '%'});
+    };
     $(window).on('scroll', function(){
         window.requestAnimationFrame(function(){
             for(let i = 0; i < parallaxQuantityRS; i++){
                 const currentElementRS = parallaxElementsRS.eq(i);
                 const scrolledRS = $(window).scrollTop();
                 currentElementRS.css({
-                    'transform': `translate3d(0, ${scrolledRS * -0.3}px, 0)`
+                    'transform': `translate3d(0, ${scrolledRS * scrollNum}px, 0)`
                 });
             };
         });
