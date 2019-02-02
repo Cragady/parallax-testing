@@ -52,6 +52,7 @@ function parallaxSwitch(){
             scrollDir = 'with';
             scrollNum = 0.6;
             funkSwitch = parallaxRSScroller;
+            break;
         default:
             console.log('oops');
     }
