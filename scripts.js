@@ -58,14 +58,14 @@ function parallaxSwitch(){
 }
 
 function bodyWriter(){
-    let precursor1 = './';
+    let precursor1 = '';
     let precursor2 = './others/';
     if(pathPlacer === 'index.html'){
         navWriter(precursor1, precursor2);
         $('nav').append(newNavs.join(''));
     } else {
         precursor1 = '../';
-        precursor2 = './';
+        precursor2 = '';
         navWriter(precursor1, precursor2);
         $('body').prepend(`
     <header>
