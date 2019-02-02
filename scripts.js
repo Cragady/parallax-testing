@@ -31,7 +31,7 @@ function navWriter(p1, p2){
 
 function parallaxSwitch(){
     switch (pathPlacer){
-        case 'index.html':
+        case 'index.html' || '':
             console.log('hardcoded');
             break;
         case 'reverse-s.html':
