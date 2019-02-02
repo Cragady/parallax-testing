@@ -198,6 +198,12 @@ function navs(){
 
 // reverse-s -----------------
 
+/* I added an argument for parallaxRSScroller so that
+    it could be changed depending on which page you 
+    load. for the scroll with, you have to bump the image
+    higher than the top of the parent div. this is so that
+    the scrolling doesn't give a bunch of white space in 
+the parent div and it looks like the picture is contained */
 function parallaxRSScroller(direction){
     const parallaxElementsRS = $('.parallax-rs'),
         parallaxQuantityRS = parallaxElementsRS.length;
