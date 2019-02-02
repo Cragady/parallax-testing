@@ -15,7 +15,7 @@ function navWriter(p1, p2){
             href = p1 + nav;
             newNavs.push(`
                 <li class="nav-item">
-                    <a href="${href}" class="nav-link">Scroll</a>
+                    <a href="${p1}" class="nav-link">Scroll</a>
                 </li>
             `);
         } else {
