@@ -17,7 +17,7 @@ a:hover{
 /* According to the example givin on
     https://www.w3schools.com/howto/howto_css_parallax.asp */
 .parallax-fs{
-    background-image: url('http://www.goodmorningimagesforlover.com/wp-content/uploads/2018/10/dark-side-cool-background-1066x617.jpg');
+    background-image: url('https://www.goodmorningimagesforlover.com/wp-content/uploads/2018/10/dark-side-cool-background-1066x617.jpg');
 
     /*Set a specific height*/
     height: 500px;
@@ -56,7 +56,7 @@ a:hover{
     height: 200%;
     width: 100%;
     z-index: -1;
-    background: url('http://www.goodmorningimagesforlover.com/wp-content/uploads/2018/10/dark-side-cool-background-1066x617.jpg') center center / cover no-repeat;
+    background: url('https://www.goodmorningimagesforlover.com/wp-content/uploads/2018/10/dark-side-cool-background-1066x617.jpg') center center / cover no-repeat;
 }
 
 .content-rs{
