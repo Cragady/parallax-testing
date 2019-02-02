@@ -59,7 +59,7 @@ function parallaxSwitch(){
 }
 
 function bodyWriter(){
-    let precursor1 = '';
+    let precursor1 = './';
     let precursor2 = './others/';
     if(pathPlacer === 'index.html' || pather.length === 3){
         navWriter(precursor1, precursor2);
