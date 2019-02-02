@@ -60,7 +60,7 @@ function parallaxSwitch(){
 function bodyWriter(){
     let precursor1 = '';
     let precursor2 = './others/';
-    if(pathPlacer === 'index.html'){
+    if(pathPlacer === 'index.html' || pathPlacer === ''){
         navWriter(precursor1, precursor2);
         $('nav').append(newNavs.join(''));
     } else {
