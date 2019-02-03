@@ -60,7 +60,7 @@ E.g.
 
 </details>
 
-[Parallax Types](#parallax-types)<br>
+[⬆ Parallax Types](#parallax-types)<br>
 [⬆ Back to top](#contents)
 
 ***
@@ -197,7 +197,7 @@ let scrollDir;
 
 </details>
 
-[Parallax Types](#parallax-types)<br>
+[⬆ Parallax Types](#parallax-types)<br>
 [⬆ Back to top](#contents)
 
 ***
@@ -217,7 +217,7 @@ This effect changes very little from the `Scroll With` effect, so I'll just cove
 
 </details>
 
-[Parallax Types](#parallax-types)<br>
+[⬆ Parallax Types](#parallax-types)<br>
 [⬆ Back to top](#contents)
 
 # The HTML Writers
@@ -350,7 +350,7 @@ The functions:
 
 </details>
 
-[The HTML Writers](#the-html-writers)<br>
+[⬆ The HTML Writers](#the-html-writers)<br>
 [⬆ Back to top](#contents)
 
 # Call Order On Page Load
