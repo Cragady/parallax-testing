@@ -303,7 +303,9 @@ The functions:
             </div>
         </section>
             `);
-            funkSwitch(scrollDir);
+            if(funkSwitch){
+                funkSwitch(scrollDir);
+            };
         };  
     };
 ```
