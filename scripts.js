@@ -13,11 +13,19 @@ function navWriter(p1, p2){
     navArray.map((nav, i) =>{
         if(i === 0){
             href = p1 + nav;
-            newNavs.push(`
-                <li class="nav-item">
-                    <a href="${p1}" class="nav-link">Scroll</a>
-                </li>
-            `);
+            if(window.location.origin === 'file://'){
+                newNavs.push(`
+                    <li class="nav-item">
+                        <a href="${href}" class="nav-link">Scroll</a>
+                    </li>
+                `);
+            } else {
+                newNavs.push(`
+                    <li class="nav-item">
+                        <a href="${p1}" class="nav-link">Scroll</a>
+                    </li>
+                `);
+            };
         } else {
             href = p2 + nav;
             newNavs.push(`
@@ -34,7 +42,7 @@ function parallaxSwitch(){
         case 'index.html' || '':
             console.log('hardcoded');
             break;
-        case 'reverse-s.html':
+        case 'scroll-with.html':
             picSection.push(`
                 <section class="parallax-container-rs">
                     <div class="parallax-rs"></div>
@@ -43,14 +51,15 @@ function parallaxSwitch(){
             scrollNum = -0.6;
             funkSwitch = parallaxRSScroller;
             break;
-        case 'scroll-with.html':
+        case 'reverse-s.html':
             picSection.push(`
                 <section class="parallax-container-rs">
                     <div class="parallax-rs"></div>
                 </section>
             `);
-            scrollDir = 'with';
-            scrollNum = 0.6;
+            scrollDir = 'against';
+            // scrollNum = 0.6; /*I like this speed*/
+            scrollNum = 1.2; /** This speed isn't bad either */
             funkSwitch = parallaxRSScroller;
             break;
         default:
@@ -201,14 +210,14 @@ function navs(){
 
 /* I added an argument for parallaxRSScroller so that
     it could be changed depending on which page you 
-    load. for the scroll with, you have to bump the image
+    load. for the reverse scroll, you have to bump the image
     higher than the top of the parent div. this is so that
     the scrolling doesn't give a bunch of white space in 
 the parent div and it looks like the picture is contained */
 function parallaxRSScroller(direction){
     const parallaxElementsRS = $('.parallax-rs'),
         parallaxQuantityRS = parallaxElementsRS.length;
-    if(direction === 'with'){
+    if(direction === 'against'){
         $('.parallax-rs').css({'top': -100 + '%'});
     };
     $(window).on('scroll', function(){
