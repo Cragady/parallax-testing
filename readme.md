@@ -1,13 +1,29 @@
 [Link to testing grounds](https://cragady.github.io/parallax-testing/)
 
+# Contents
+
+[Purpose](#purpose)<br>
+[Parallax Types](#parallax-types)<br>
+  * [Regular/Fixed](#regular-fixed)
+  * [Scroll With](#scroll-with)
+  * [Reverse Scrolling](#reverse-scrolling)
+
+[The HTML Writers](#the-html-writers)<br>
+[Call Order On Page Load](#call-order-on-page-load)<br>
+
 # Purpose
 
 The purpose of this small application is to play around with parallax. It may stay small, or it may balloon into something bigger. Either way, as long as I find out some useful things, it doesn't matter really.
 
+[⬆ Back to top](#contents)
+
 # Parallax Types
 
+[Regular/Fixed](#regular-fixed) | [Scroll With](#scroll-with) | [Reverse Scrolling](#reverse-scrolling)
+
+### <a id="regular-fixed" class="anchor" href="#regular-fixed"></a>
 <details>
-<summary>Regular fixed</summary>
+<summary>Regular/Fixed</summary>
 
 The example for the simple fixed background is in `index.html`. This is with a basic html layout and some css.
 
@@ -44,8 +60,12 @@ E.g.
 
 </details>
 
+[Parallax Types](#parallax-types)<br>
+[⬆ Back to top](#contents)
+
 ***
 
+### <a id="scroll-with" class="anchor" href="#scroll-with"></a>
 <details>
 <summary>Scroll With</summary>
 
@@ -177,8 +197,12 @@ let scrollDir;
 
 </details>
 
+[Parallax Types](#parallax-types)<br>
+[⬆ Back to top](#contents)
+
 ***
 
+### <a id="reverse-scrolling" class="anchor" href="#reverse-scrolling"></a>
 <details>
 <summary>Reverse Scrolling</summary>
 
@@ -192,6 +216,9 @@ This effect changes very little from the `Scroll With` effect, so I'll just cove
 
 
 </details>
+
+[Parallax Types](#parallax-types)<br>
+[⬆ Back to top](#contents)
 
 # The HTML Writers
 
@@ -323,6 +350,9 @@ The functions:
 
 </details>
 
+[The HTML Writers](#the-html-writers)<br>
+[⬆ Back to top](#contents)
+
 # Call Order On Page Load
 
 <details>
@@ -340,3 +370,5 @@ I should make the function calls inside the other functions, and probably find a
     });
 ```
 </details>
+
+[⬆ Back to top](#contents)
