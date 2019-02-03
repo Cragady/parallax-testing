@@ -159,7 +159,7 @@ let scrollDir;
                         <div class="parallax-rs"></div>
                     </section>
                 `);
-                scrollDir = 'with';
+                scrollDir = 'against';
                 //scrollNum = 0.6; /*I like this speed*/
                 scrollNum = 1.2; /** This speed isn't bad either */
                 funkSwitch = parallaxRSScroller;
@@ -174,7 +174,7 @@ let scrollDir;
     function parallaxRSScroller(direction){
         const parallaxElementsRS = $('.parallax-rs'),
             parallaxQuantityRS = parallaxElementsRS.length;
-        if(direction === 'with'){
+        if(direction === 'against'){
             $('.parallax-rs').css({'top': -100 + '%'});
         };
         $(window).on('scroll', function(){
