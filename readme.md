@@ -118,7 +118,10 @@ let scrollDir;
 ```javascript
     function parallaxSwitch(){
         switch(pathPlacer){
-            case 'index.html' || '':
+            case 'index.html':
+                console.log('hardcoded');
+                break;
+            case '':
                 console.log('hardcoded');
                 break;
             case 'scroll-with.html':
