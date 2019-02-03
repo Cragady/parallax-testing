@@ -118,7 +118,7 @@ let scrollDir;
 ```javascript
     function parallaxSwitch(){
         switch(pathPlacer){
-            case 'index.html' || '':
+            case 'index.html' || '""':
                 console.log('hardcoded');
                 break;
             case 'scroll-with.html':
@@ -242,11 +242,19 @@ The functions:
         navArray.map((nav, i) =>{
             if(i === 0){
                 href = p1 + nav;
-                newNavs.push(`
-                    <li class="nav-item">
-                        <a href="${p1}" class="nav-link">Scroll</a>
-                    </li>
-                `);
+                if(window.location.origin === 'file://'){
+                    newNavs.push(`
+                        <li class="nav-item">
+                            <a href="${href}" class="nav-link">Scroll</a>
+                        </li>
+                    `);
+                } else {
+                    newNavs.push(`
+                        <li class="nav-item">
+                            <a href="${p1}" class="nav-link">Scroll</a>
+                        </li>
+                    `);
+                };
             } else {
                 href = p2 + nav;
                 newNavs.push(`
